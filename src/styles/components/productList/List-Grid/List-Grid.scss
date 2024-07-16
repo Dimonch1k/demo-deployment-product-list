@@ -1,0 +1,30 @@
+.list-grid {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+
+    &__item {
+        display: flex;
+        padding: 2px 7px;
+
+        &.selected {
+            background-color: #58a9ff;
+            color: white;
+        }
+
+        svg {
+            cursor: pointer;
+        }
+    }
+
+    hr {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        border: 1px solid #007bff;
+    }
+}

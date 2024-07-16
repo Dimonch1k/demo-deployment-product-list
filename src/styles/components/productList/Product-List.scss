@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import "../../../styles/mixins.scss";
+
+body {
+  @include do_not_select_text;
+}
+
+:is(ul, ul li) {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+img {
+  object-fit: contain;
+}
+
+input:focus {
+  outline: none;
+}
+
+:is(p, input) {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+
+details summary {
+  list-style: none;
+}
+
+.catalog-settings {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  font-family: Arial, "Segoe UI", Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+  grid-gap: 10px;
+
+  &.rows {
+    display: flex;
+    flex-direction: column;
+  }
+}

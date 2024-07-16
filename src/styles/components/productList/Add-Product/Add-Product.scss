@@ -1,0 +1,93 @@
+@import "../../../../styles/mixins.scss";
+
+.add-product-popup {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.75rem;
+    position: fixed;
+    top: 1rem;
+    z-index: 10;
+    background-color: white;
+
+    .product-expiration {
+        display: flex;
+        align-items: center;
+
+        label {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        input[type="radio"]#expires-true {
+            border: 2px solid #e54062;
+
+            &:checked {
+                @include bg-c_br-c_trans(#e54062, #e54062, 0.5s);
+            }
+        }
+
+        input[type="radio"]#expires-false {
+            border: 2px solid #43ad4b;
+
+            &:checked {
+                @include bg-c_br-c_trans(#25b330, #43ad4b, 0.5s);
+            }
+        }
+
+        input[type="radio"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            /* background-color only for content */
+            background-clip: content-box;
+            border-radius: 50%;
+
+            @include w_h(15px, 15px);
+            @include df_jc_ai(flex, center, center);
+
+            margin-left: 5px !important;
+            margin-right: 1px !important;
+            padding: 1px;
+            cursor: pointer;
+        }
+    }
+}
+
+input[type="text"]:invalid {
+    border: 1px solid #e54062;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 5px;
+    width: 100%;
+    margin-left: auto !important;
+
+    &::placeholder {
+        color: #e54062;
+    }
+}
+
+input[type="file"]::file-selector-button {
+    margin-right: 10px;
+    border: none;
+    background: #084cdf;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+        background: #0d45a5;
+    }
+}
+
+input[type="radio"] {
+    flex-shrink: 0;
+}
+
+hr {
+    margin: 5px 0;
+}
