@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
 
 import "../../../styles/components/productList/Add-Product/Add-Product.scss";
 
@@ -8,12 +7,6 @@ import Button from "react-bootstrap/Button";
 
 const AddProduct = ({ addNewProduct }) => {
   const [show, setShow] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
   const addProduct = (data) => {
     const file = data.img;
