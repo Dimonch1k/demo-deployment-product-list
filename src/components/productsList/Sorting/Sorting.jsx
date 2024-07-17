@@ -13,7 +13,7 @@ const Sorting = ({ setCurrentSort, currentSort, sortingMap }) => {
         className="sorting__content"
         onChange={(e) => handleSetCurrentSort(e.target.value)}
       >
-        <option selected hidden>
+        <option disabled selected hidden>
           Sort by
         </option>
         {sortingNames.map((sortingName) => (
