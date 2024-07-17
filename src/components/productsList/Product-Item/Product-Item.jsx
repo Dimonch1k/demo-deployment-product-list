@@ -14,7 +14,6 @@ const ProductItem = ({ image, info, price, expire, more, gridRows }) => {
   useEffect(() => {
     const closeDetailsOnScroll = () => {
       if (detailsRef.current && detailsRef.current.open) {
-        detailsRef.current.open = false;
         setShowMore(false);
       }
     };
@@ -50,18 +49,10 @@ const ProductItem = ({ image, info, price, expire, more, gridRows }) => {
         </div>
       </div>
 
-      {/* <div className="description" style={{display: showMore && "none"}}></div> */}
-      {/* <div
-          className={classNames("description__hidden", { hidden: !showMore })}
-        >
-          <p className="description__hidden-inner">
-            <span>{more.processor}</span> / <span>{more.ram}</span> /{" "}
-            <span>{more.storage}</span> / <span>{more.display}</span>
-          </p>
-        </div> */}
-
-      <div ref={detailsRef} className="description">
-        <summary onClick={toggleReadmore}>{showMore ? "Less" : "More"}</summary>
+      <div className="description">
+        <div className="description__showMore" onClick={toggleReadmore}>
+          {showMore ? "Less" : "More"}
+        </div>
         <div
           className={classNames("description__hidden", { hidden: !showMore })}
         >
