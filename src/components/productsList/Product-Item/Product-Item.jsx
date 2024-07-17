@@ -50,7 +50,7 @@ const ProductItem = ({ image, info, price, expire, more, gridRows }) => {
         </div>
       </div>
 
-      <details ref={detailsRef} className="description">
+      <div ref={detailsRef} className="description">
         <summary onClick={toggleReadmore}>{showMore ? "Less" : "More"}</summary>
         <div
           className={classNames("description__hidden", { hidden: !showMore })}
@@ -60,7 +60,7 @@ const ProductItem = ({ image, info, price, expire, more, gridRows }) => {
             <span>{more.storage}</span> / <span>{more.display}</span>
           </p>
         </div>
-      </details>
+      </div>
     </ul>
   );
 };
