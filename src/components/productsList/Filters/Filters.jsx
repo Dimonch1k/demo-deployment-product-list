@@ -8,16 +8,15 @@ const Filters = ({ setCurrentFilter, currentFilter, filterMap }) => {
 
   return (
     <div className="filters">
-      <select className="filters__content">
+      <select
+        className="filters__content"
+        onChange={(e) => handleSetCurrentFilter(e.target.value)}
+      >
         <option selected hidden>
           Filter by
         </option>
         {filterNames.map((filterName) => (
-          <option
-            key={filterName}
-            className={currentFilter && "active"}
-            onClick={() => handleSetCurrentFilter(filterName)}
-          >
+          <option key={filterName} className={currentFilter && "active"}>
             {filterName}
           </option>
         ))}

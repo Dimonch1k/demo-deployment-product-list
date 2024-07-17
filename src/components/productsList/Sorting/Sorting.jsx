@@ -9,16 +9,15 @@ const Sorting = ({ setCurrentSort, currentSort, sortingMap }) => {
 
   return (
     <div className="sorting">
-      <select className="sorting__content">
+      <select
+        className="sorting__content"
+        onChange={(e) => handleSetCurrentSort(e.target.value)}
+      >
         <option selected hidden>
           Sort by
         </option>
         {sortingNames.map((sortingName) => (
-          <option
-            key={sortingName}
-            className={currentSort && "active"}
-            onClick={() => handleSetCurrentSort(sortingName)}
-          >
+          <option key={sortingName} className={currentSort && "active"}>
             {sortingName}
           </option>
         ))}
