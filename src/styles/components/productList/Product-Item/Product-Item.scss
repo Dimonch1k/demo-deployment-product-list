@@ -114,6 +114,11 @@
 
       position: absolute;
       z-index: 5;
+
+
+      &.hidden {
+        display: none;
+      }
     }
 
     &__hidden-inner {

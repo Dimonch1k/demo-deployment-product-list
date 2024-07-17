@@ -50,6 +50,16 @@ const ProductItem = ({ image, info, price, expire, more, gridRows }) => {
         </div>
       </div>
 
+      {/* <div className="description" style={{display: showMore && "none"}}></div> */}
+      {/* <div
+          className={classNames("description__hidden", { hidden: !showMore })}
+        >
+          <p className="description__hidden-inner">
+            <span>{more.processor}</span> / <span>{more.ram}</span> /{" "}
+            <span>{more.storage}</span> / <span>{more.display}</span>
+          </p>
+        </div> */}
+
       <div ref={detailsRef} className="description">
         <summary onClick={toggleReadmore}>{showMore ? "Less" : "More"}</summary>
         <div
